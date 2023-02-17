@@ -3,9 +3,11 @@ import { Provider } from 'react-redux';
 import Body from './components/Body';
 import Head from './components/Head';
 import store from './store/store';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import WatchPage from './components/WatchPage';
 import MainContainer from './components/MainContainer';
+import ResultsPage from './components/ResultsPage';
+import ErrorPage from './ErrorPage';
 
 /* 
   Head
@@ -17,19 +19,39 @@ import MainContainer from './components/MainContainer';
     VideoContainer
       VideoCard
 */
+
+const AppLayout = () => {
+    return (
+        <>
+            <Head />
+            <Outlet />
+        </>
+    );
+};
+
 const appRouter = createBrowserRouter([
     {
         path: '/',
-        element: <Body />,
+        element: <AppLayout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: '/',
-                element: <MainContainer />,
-            },
-            {
-                path: 'watch',
-                element: <WatchPage />,
-
+                element: <Body />,
+                children: [
+                    {
+                        path: '/',
+                        element: <MainContainer />,
+                    },
+                    {
+                        path: 'watch',
+                        element: <WatchPage />,
+                    },
+                    {
+                        path: 'results',
+                        element: <ResultsPage />,
+                    },
+                ],
             },
         ],
     },
@@ -39,7 +61,6 @@ function App() {
     return (
         <Provider store={store}>
             <div>
-                <Head />
                 <RouterProvider router={appRouter} />
             </div>
         </Provider>

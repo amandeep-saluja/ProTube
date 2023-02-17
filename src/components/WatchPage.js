@@ -5,6 +5,7 @@ import { toggleMenu } from '../store/appSlice';
 import { RiThumbUpLine, RiThumbDownLine, RiShareForwardLine } from 'react-icons/ri';
 import { parseDate, parseViews, parseLikes } from '../utils/helper';
 import VideoListContainer from './VideoListContainer';
+import CommentsContainer from './CommentsContainer';
 
 const WatchPage = () => {
     const [showMoreDescription, setShowMoreDescription] = useState(false);
@@ -28,7 +29,7 @@ const WatchPage = () => {
     return (
         <div className="flex max-w-xl mx-24">
             <div className="">
-                <div className="">
+                {/* <div className="">
                     <iframe
                         width="885"
                         height="498"
@@ -88,11 +89,13 @@ const WatchPage = () => {
                             </button>
                         </div>
                     </div>
+                </div> */}
+                <div>
+                    <CommentsContainer data={commentCount} />
                 </div>
-                <div>{commentCount} Comments</div>
             </div>
             <div>
-                <VideoListContainer />
+                {/* <VideoListContainer /> */}
             </div>
         </div>
     );

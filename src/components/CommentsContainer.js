@@ -1,81 +1,12 @@
-import React from 'react';
+import CommentSection from './CommenSection';
+import COMMENTS_DATA from '../assets/comments';
 
-const commentsData = [
-    {
-        name: 'Amandeep Singh',
-        comment: 'This is a comment...😎',
-        replies: [
-            {
-                name: 'Amandeep Singh',
-                comment: 'This is a comment...😎',
-                replies: [
-                    {
-                        name: 'Amandeep Singh',
-                        comment: 'This is a comment...😎',
-                        replies: [
-                            {
-                                name: 'Amandeep Singh',
-                                comment: 'This is a comment...😎',
-                                replies: [
-                                    {
-                                        name: 'Amandeep Singh',
-                                        comment: 'This is a comment...😎',
-                                        replies: [
-                                            {
-                                                name: 'Amandeep Singh',
-                                                comment: 'This is a comment...😎',
-                                                replies: [],
-                                            },
-                                            {
-                                                name: 'Amandeep Singh',
-                                                comment: 'This is a comment...😎',
-                                                replies: [],
-                                            },
-                                            {
-                                                name: 'Amandeep Singh',
-                                                comment: 'This is a comment...😎',
-                                                replies: [
-                                                    {
-                                                        name: 'Amandeep Singh',
-                                                        comment: 'This is a comment...😎',
-                                                        replies: [
-                                                            {
-                                                                name: 'Amandeep Singh',
-                                                                comment: 'This is a comment...😎',
-                                                                replies: [],
-                                                            },
-                                                            {
-                                                                name: 'Amandeep Singh',
-                                                                comment: 'This is a comment...😎',
-                                                                replies: [],
-                                                            },
-                                                        ],
-                                                    },
-                                                ],
-                                            },
-                                        ],
-                                    },
-                                ],
-                            },
-                        ],
-                    },
-                ],
-            },
-        ],
-    },
-];
-
-const CommentSection = ({ comment }) => {
-    return <div>
-        <img alt="image" />
-    </div>;
-};
-
-const CommentsContainer = () => {
+const CommentsContainer = ({ commentCount }) => {
     return (
         <div>
             <h1 className="font-bold text-2xl">Comments:</h1>
-            <CommentSection comment={commentsData} />
+            <div>{commentCount} Comments</div>
+            <CommentSection comments={COMMENTS_DATA} />
         </div>
     );
 };
