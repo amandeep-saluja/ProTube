@@ -29,7 +29,7 @@ const WatchPage = () => {
     return (
         <div className="flex max-w-xl mx-24">
             <div className="">
-                {/* <div className="">
+                <div className="">
                     <iframe
                         width="885"
                         height="498"
@@ -89,13 +89,13 @@ const WatchPage = () => {
                             </button>
                         </div>
                     </div>
-                </div> */}
+                </div>
                 <div>
                     <CommentsContainer data={commentCount} />
                 </div>
             </div>
             <div>
-                {/* <VideoListContainer /> */}
+                <VideoListContainer />
             </div>
         </div>
     );

@@ -2,6 +2,24 @@ const COMMENTS_DATA = [
     {
         name: 'Amandeep Singh',
         comment: 'This is a comment...😎',
+        dateTime: '2023-02-17T14:25:34.057Z',
+        replies: [],
+    },
+    {
+        name: 'Amandeep Singh',
+        comment: 'This is a comment...😎',
+        dateTime: '2023-02-17T14:35:34.057Z',
+        replies: [],
+    },
+    {
+        name: 'Amandeep Singh',
+        comment: 'This is a comment...😎',
+        dateTime: '2023-02-17T14:45:34.057Z',
+        replies: [],
+    },
+    {
+        name: 'Amandeep Singh',
+        comment: 'This is a comment...😎',
         dateTime: '2021-02-17T08:13:29.057Z',
         replies: [
             {
@@ -69,7 +87,7 @@ const COMMENTS_DATA = [
                             {
                                 name: 'Amandeep Singh',
                                 comment: 'This is a comment...😎',
-                                dateTime: '2023-02-17T08:13:34.057Z',
+                                dateTime: '2023-02-17T14:55:34.057Z',
                                 replies: [],
                             },
                         ],
