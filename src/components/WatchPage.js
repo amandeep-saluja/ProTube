@@ -6,6 +6,7 @@ import { RiThumbUpLine, RiThumbDownLine, RiShareForwardLine } from 'react-icons/
 import { parseDate, parseViews, parseLikes } from '../utils/helper';
 import VideoListContainer from './VideoListContainer';
 import CommentsContainer from './CommentsContainer';
+import LiveChatContainer from './LiveChatContainer';
 
 const WatchPage = () => {
     const [showMoreDescription, setShowMoreDescription] = useState(false);
@@ -28,7 +29,7 @@ const WatchPage = () => {
 
     return (
         <div className="flex max-w-xl mx-24">
-            <div className="">
+            <div className="video-btns">
                 <div className="">
                     <iframe
                         width="885"
@@ -39,7 +40,7 @@ const WatchPage = () => {
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
                     ></iframe>
-                    <div className="">
+                    <div className="title-like-btns">
                         <div className="font-medium text-xl my-2">{title}</div>
                         <div className="flex justify-between">
                             <div className="flex cursor-pointer">
@@ -95,6 +96,7 @@ const WatchPage = () => {
                 </div>
             </div>
             <div>
+                <LiveChatContainer />
                 <VideoListContainer />
             </div>
         </div>

@@ -1,16 +1,20 @@
 import USER from '../assets/user.jpg';
 import { commentDateTime } from '../utils/helper';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BsTriangleFill } from 'react-icons/bs';
+import useCommentsByVideoId from '../hooks/useCommentsByVideoId';
+import {useSearchParams} from 'react-router-dom';
 
 const CommentSection = ({ comments }) => {
     const [showReplies, setShowReplies] = useState(false);
+    const [searchParam] = useSearchParams();
+    const commentsByVideoId = useCommentsByVideoId(searchParam.get('v'));
 
     return (
         comments &&
         comments.map((data, index) => {
             return (
-                <div className="flex flex-row border-l-2 px-2 pt-2 mt-2 bg-gray-200 rounded-2xl" key={index}>
+                <div className="flex flex-row border-l-2 px-2 pt-2 mt-2 rounded-2xl" key={index}>
                     <img alt="user" src={USER} className="h-6 mr-4" />
                     <div className="flex flex-col">
                         <div className="flex">
